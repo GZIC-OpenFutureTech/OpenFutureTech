@@ -1,4 +1,4 @@
-# 华南理工大学国际校区未来技术学院课程攻略 |GZIC-OpenFutureTech
+# 华南理工大学国际校区未来技术学院课程攻略 | GZIC-OpenFutureTech
 
 受 [浙江大学相关项目](https://github.com/QSCTech/zju-icicles) ，[清华大学相关项目](https://github.com/PKUanonym/REKCARC-TSC-UHT) ，[哈尔滨工业大学(深圳)相关项目](https://github.com/HITSZ-OpenCS/HITSZ-OpenCS)启发，创立了本项目。
 
