@@ -1,0 +1,30 @@
+\contentsline {section}{\numberline {1}Abstract}{2}{}%
+\contentsline {subsection}{\numberline {1.1}The Frank Hertz Experiment}{2}{}%
+\contentsline {subsection}{\numberline {1.2}Metal fugitive work experiment}{2}{}%
+\contentsline {section}{\numberline {2}Purpose of the experiment}{2}{}%
+\contentsline {subsection}{\numberline {2.1}The Frank Hertz Experiment}{2}{}%
+\contentsline {subsection}{\numberline {2.2}Metal fugitive work experiment}{2}{}%
+\contentsline {section}{\numberline {3}Experimental apparatus}{2}{}%
+\contentsline {section}{\numberline {4}Experimental principles}{4}{}%
+\contentsline {subsection}{\numberline {4.1}The Frank Hertz Experiment}{4}{}%
+\contentsline {subsection}{\numberline {4.2}Metal fugitive work experiment}{5}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}Egress function}{5}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}Thermoelectric emission circuit}{6}{}%
+\contentsline {subsubsection}{\numberline {4.2.3}Richardson Linear Method}{7}{}%
+\contentsline {subsubsection}{\numberline {4.2.4}Measurement of zero-field current I}{7}{}%
+\contentsline {section}{\numberline {5}Contents and Steps}{8}{}%
+\contentsline {subsection}{\numberline {5.1}The Frank Hertz Experiment}{8}{}%
+\contentsline {subsubsection}{\numberline {5.1.1}Measured in automatic mode}{8}{}%
+\contentsline {subsubsection}{\numberline {5.1.2}Study the effect of each voltage on the $I_A\sim V_{G_2K}$ curve}{8}{}%
+\contentsline {subsection}{\numberline {5.2}Metal fugitive work experiment}{9}{}%
+\contentsline {section}{\numberline {6}Data processing}{9}{}%
+\contentsline {subsection}{\numberline {6.1}The Frank Hertz Experiment}{9}{}%
+\contentsline {subsubsection}{\numberline {6.1.1}Automatic mode measurements were recorded in the following table}{9}{}%
+\contentsline {subsubsection}{\numberline {6.1.2}The experimental data were recorded in the following table for changing each voltage on the $I_A\sim V_{G_2K}$ curve:}{10}{}%
+\contentsline {subsection}{\numberline {6.2}Metal fugitive work experiment}{12}{}%
+\contentsline {subsubsection}{\numberline {6.2.1}Record the experimental data in the following table}{12}{}%
+\contentsline {section}{\numberline {7}Conclusion and analysis}{14}{}%
+\contentsline {subsection}{\numberline {7.1}The Frank Hertz Experiment}{14}{}%
+\contentsline {subsection}{\numberline {7.2}Metal fugitive work experiment}{14}{}%
+\contentsline {section}{\numberline {A}Data Analysis and Visualisation Source Code}{14}{}%
+\contentsline {section}{\numberline {B}Related photo records}{15}{}%

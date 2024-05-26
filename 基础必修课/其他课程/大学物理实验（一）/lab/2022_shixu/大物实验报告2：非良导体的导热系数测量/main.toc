@@ -1,0 +1,20 @@
+\contentsline {section}{\numberline {1}Abstract}{2}{}%
+\contentsline {section}{\numberline {2}Purpose of the experiment}{2}{}%
+\contentsline {section}{\numberline {3}Experimental apparatus}{2}{}%
+\contentsline {subsection}{\numberline {3.1}Optical Instruments Group}{2}{}%
+\contentsline {subsection}{\numberline {3.2}Thermal conductivity test accessories and samples to be tested}{3}{}%
+\contentsline {section}{\numberline {4}Experimental principles}{4}{}%
+\contentsline {subsection}{\numberline {4.1}Determination of temperature $\frac {dT}{dZ}$}{4}{}%
+\contentsline {subsection}{\numberline {4.2}Determination of heat transfer rate $\frac {dQ}{dt} $}{5}{}%
+\contentsline {subsection}{\numberline {4.3}Formula derivation}{6}{}%
+\contentsline {section}{\numberline {5}Contents and Steps}{6}{}%
+\contentsline {section}{\numberline {6}Data processing}{7}{}%
+\contentsline {subsection}{\numberline {6.1}Basic data measurement and recording}{7}{}%
+\contentsline {subsection}{\numberline {6.2}Stable temperature measurement}{7}{}%
+\contentsline {subsection}{\numberline {6.3}Heat dissipation rate measurement}{8}{}%
+\contentsline {subsection}{\numberline {6.4}Data extraction and calculation of results}{9}{}%
+\contentsline {section}{\numberline {7}Conclusion and analysis}{10}{}%
+\contentsline {subsection}{\numberline {7.1}Experimental conclusion}{10}{}%
+\contentsline {subsection}{\numberline {7.2}Experimental error analysis}{10}{}%
+\contentsline {section}{\numberline {A}Documentation of experimental procedures}{11}{}%
+\contentsline {section}{\numberline {B}Data Analysis and Visualisation Source Code}{11}{}%

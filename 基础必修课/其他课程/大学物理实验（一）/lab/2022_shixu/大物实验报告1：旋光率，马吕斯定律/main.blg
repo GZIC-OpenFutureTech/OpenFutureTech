@@ -1,0 +1,26 @@
+This is 8-bit Big BibTeX version 0.99d
+Implementation:  Microsoft(R) C/C++ for Win32
+Release version: 3.72 (05 feb 2022)
+
+The 8-bit codepage and sorting file: 88591lat.csf
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+I couldn't open database file ./template.bib
+---line 26 of file main.aux
+ : \bibdata{./template
+ :                    }
+I'm skipping whatever remains of this command
+I found no database files---while reading file main.aux
+Reallocated glb_str_ptr (elt_size=4) to 10 items from 0.
+Reallocated global_strs (elt_size=200001) to 10 items from 0.
+Reallocated glb_str_end (elt_size=4) to 10 items from 0.
+Warning--I didn't find a database entry for "王合英2018自主探究实验对学生综合素质和创新能力的培养"
+
+Here's how much of BibTeX's memory you used:
+ Cites:                 0 out of 750
+ Fields:                0 out of 5000
+ Hash table:       199852 out of 200000
+ Strings:             496 out of 200000
+ Free string pool:   4050 out of 65000
+ Wizard functions:   2118 out of 3000
+(There were 2 error messages)

@@ -1,0 +1,32 @@
+\contentsline {section}{\numberline {1}Abstract}{2}{}%
+\contentsline {section}{\numberline {2}Purpose of the experiment}{2}{}%
+\contentsline {section}{\numberline {3}Experimental apparatus}{2}{}%
+\contentsline {subsection}{\numberline {3.1}Optical Instruments Group}{2}{}%
+\contentsline {subsection}{\numberline {3.2}Other equipment and assembly of equipment}{3}{}%
+\contentsline {section}{\numberline {4}Experimental principles}{4}{}%
+\contentsline {subsection}{\numberline {4.1}Measurement of the focal length of a convex lens}{4}{}%
+\contentsline {subsubsection}{\numberline {4.1.1}Parallel light source focusing method for rapid measurement of convex lens focal lengths}{4}{}%
+\contentsline {subsubsection}{\numberline {4.1.2}Measuring the focal length of a convex lens by primary imaging}{4}{}%
+\contentsline {subsubsection}{\numberline {4.1.3}Secondary imaging method (conjugate method)}{5}{}%
+\contentsline {subsection}{\numberline {4.2}Determination of the focal length of a concave lens}{5}{}%
+\contentsline {section}{\numberline {5}Contents and Steps}{6}{}%
+\contentsline {subsection}{\numberline {5.1}Co-axial adjustment of optical elements}{6}{}%
+\contentsline {subsubsection}{\numberline {5.1.1}Rough Tuning}{6}{}%
+\contentsline {subsubsection}{\numberline {5.1.2}Fine tuning}{7}{}%
+\contentsline {subsection}{\numberline {5.2}Measuring the focal length of a convex lens}{7}{}%
+\contentsline {subsection}{\numberline {5.3}Measuring the focal length of a concave lens}{8}{}%
+\contentsline {section}{\numberline {6}Data processing}{9}{}%
+\contentsline {subsection}{\numberline {6.1}Measuring the focal length of a convex lens}{9}{}%
+\contentsline {subsubsection}{\numberline {6.1.1}Parallel light focusing method}{9}{}%
+\contentsline {subsubsection}{\numberline {6.1.2}Primary imaging method}{9}{}%
+\contentsline {subsubsection}{\numberline {6.1.3}Secondary imaging method}{10}{}%
+\contentsline {subsection}{\numberline {6.2}General analysis of convex lens focal length data}{10}{}%
+\contentsline {subsection}{\numberline {6.3}Measuring the focal length of a concave lens}{12}{}%
+\contentsline {section}{\numberline {7}Conclusion and analysis}{12}{}%
+\contentsline {subsection}{\numberline {7.1}Experimental conclusion}{12}{}%
+\contentsline {subsection}{\numberline {7.2}Experimental error analysis}{13}{}%
+\contentsline {section}{\numberline {A}Documentation of experimental procedures}{13}{}%
+\contentsline {section}{\numberline {B}Data Analysis and Visualisation Source Code}{13}{}%
+\contentsline {subsection}{\numberline {B.1}Calculation of data means and standard deviations}{13}{}%
+\contentsline {subsection}{\numberline {B.2}Box line charting and outlier analysis}{14}{}%
+\contentsline {subsection}{\numberline {B.3}Scatter plot production and outlier analysis}{14}{}%
