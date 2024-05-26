@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}Abstract}{2}{}%
+\contentsline {section}{\numberline {2}Purpose of the experiment}{2}{}%
+\contentsline {section}{\numberline {3}Experimental apparatus}{2}{}%
+\contentsline {section}{\numberline {4}Experimental principles}{3}{}%
+\contentsline {subsection}{\numberline {4.1}Circuit Composition}{3}{}%
+\contentsline {subsection}{\numberline {4.2}Rectifier circuits}{4}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}Half-wave rectification}{4}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}Single-phase full-wave rectification}{5}{}%
+\contentsline {subsubsection}{\numberline {4.2.3}Bridge rectifiers}{6}{}%
+\contentsline {subsubsection}{\numberline {4.2.4}Filter circuits}{7}{}%
+\contentsline {subsection}{\numberline {4.3}Choice of circuit structure}{8}{}%
+\contentsline {subsection}{\numberline {4.4}Main indicator parameters of the voltage regulator circuit}{8}{}%
+\contentsline {section}{\numberline {5}Contents and Steps}{9}{}%
+\contentsline {section}{\numberline {6}Data processing}{10}{}%
+\contentsline {subsection}{\numberline {6.1}Measurement and calculation of the voltage regulation factor}{10}{}%
+\contentsline {subsection}{\numberline {6.2}Calculation of the ripple rejection factor}{10}{}%
+\contentsline {subsection}{\numberline {6.3}Output resistance of the voltage regulator circuit}{10}{}%
+\contentsline {section}{\numberline {7}Conclusion and analysis}{10}{}%
+\contentsline {subsection}{\numberline {7.1}Conclusion}{10}{}%
+\contentsline {subsection}{\numberline {7.2}Error analysis}{11}{}%
+\contentsline {section}{\numberline {A}Experimental procedure diagram}{11}{}%
+\contentsline {section}{\numberline {B}Experimental data recording graph}{14}{}%

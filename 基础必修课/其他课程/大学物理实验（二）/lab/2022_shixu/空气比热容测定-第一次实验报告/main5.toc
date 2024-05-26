@@ -1,0 +1,29 @@
+\contentsline {section}{\numberline {1}Abstract}{2}{}%
+\contentsline {subsection}{\numberline {1.1}Determination of specific heat capacity of air}{2}{}%
+\contentsline {subsection}{\numberline {1.2}Temperature characterization of forward voltage drop of PN junction}{2}{}%
+\contentsline {section}{\numberline {2}Purpose of the experiment}{2}{}%
+\contentsline {subsection}{\numberline {2.1}Determination of specific heat capacity of air}{2}{}%
+\contentsline {subsection}{\numberline {2.2}Temperature characterization of forward voltage drop of PN junction}{2}{}%
+\contentsline {section}{\numberline {3}Experimental apparatus}{2}{}%
+\contentsline {section}{\numberline {4}Experimental principles}{4}{}%
+\contentsline {subsection}{\numberline {4.1}Determination of specific heat capacity of air}{4}{}%
+\contentsline {subsection}{\numberline {4.2}Temperature characterization of forward voltage drop of PN junction}{5}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}Basic equations for PN junction temperature sensors}{5}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}PN junction temperature measurement principle and temperature scale conversion}{5}{}%
+\contentsline {subsubsection}{\numberline {4.2.3}Determining the forbidden band width of PN junction materials}{6}{}%
+\contentsline {section}{\numberline {5}Contents and Steps}{6}{}%
+\contentsline {subsection}{\numberline {5.1}Determination of specific heat capacity of air}{6}{}%
+\contentsline {subsection}{\numberline {5.2}Temperature characterization of forward voltage drop of PN junction}{7}{}%
+\contentsline {section}{\numberline {6}Data processing}{8}{}%
+\contentsline {subsection}{\numberline {6.1}Determination of specific heat capacity of air}{8}{}%
+\contentsline {subsection}{\numberline {6.2}Temperature characterization of forward voltage drop of PN junction}{9}{}%
+\contentsline {section}{\numberline {7}Conclusion and analysis}{10}{}%
+\contentsline {subsection}{\numberline {7.1}Determination of specific heat capacity of air}{10}{}%
+\contentsline {subsubsection}{\numberline {7.1.1}Conclusion}{10}{}%
+\contentsline {subsubsection}{\numberline {7.1.2}Error analysis}{10}{}%
+\contentsline {subsubsection}{\numberline {7.1.3}Discussion}{10}{}%
+\contentsline {subsection}{\numberline {7.2}Temperature characterization of forward voltage drop of PN junction}{11}{}%
+\contentsline {subsubsection}{\numberline {7.2.1}Conclusion}{11}{}%
+\contentsline {subsubsection}{\numberline {7.2.2}Discussion}{11}{}%
+\contentsline {section}{\numberline {A}Data Analysis and Visualisation Source Code}{12}{}%
+\contentsline {section}{\numberline {B}Related photo records}{13}{}%

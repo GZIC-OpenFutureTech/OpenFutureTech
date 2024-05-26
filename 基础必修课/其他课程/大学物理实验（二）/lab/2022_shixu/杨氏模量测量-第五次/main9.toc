@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}Abstract}{2}{}%
+\contentsline {section}{\numberline {2}Purpose of the experiment}{2}{}%
+\contentsline {section}{\numberline {3}Experimental apparatus}{2}{}%
+\contentsline {section}{\numberline {4}Experimental principles}{3}{}%
+\contentsline {subsection}{\numberline {4.1}Physical basis of Young's modulus measurements by the resonance method}{3}{}%
+\contentsline {subsection}{\numberline {4.2}Measurement of the resonant fundamental frequency of a specimen rod}{4}{}%
+\contentsline {section}{\numberline {5}Contents and Steps}{6}{}%
+\contentsline {section}{\numberline {6}Data processing}{7}{}%
+\contentsline {subsection}{\numberline {6.1}Experimental measurement data recording}{7}{}%
+\contentsline {subsection}{\numberline {6.2}Intrinsic frequency calculation}{7}{}%
+\contentsline {subsection}{\numberline {6.3}Young's modulus calculation}{9}{}%
+\contentsline {section}{\numberline {7}Conclusion and analysis}{9}{}%
+\contentsline {subsection}{\numberline {7.1}Conclusion}{9}{}%
+\contentsline {subsection}{\numberline {7.2}Error analysis}{9}{}%
+\contentsline {section}{\numberline {A}Experimental data recording graph}{10}{}%

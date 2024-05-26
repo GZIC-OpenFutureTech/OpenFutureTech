@@ -1,0 +1,29 @@
+\contentsline {section}{\numberline {1}Abstract}{2}{}%
+\contentsline {section}{\numberline {2}Purpose of the experiment}{2}{}%
+\contentsline {subsection}{\numberline {2.1}The Frank Hertz Experiment}{2}{}%
+\contentsline {subsection}{\numberline {2.2}Metal fugitive work experiment}{2}{}%
+\contentsline {section}{\numberline {3}Experimental apparatus}{2}{}%
+\contentsline {subsection}{\numberline {3.1}JJY1 spectrometer}{2}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}A basic introduction to spectrometers}{2}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}Construction of the spectrometer}{3}{}%
+\contentsline {subsubsection}{\numberline {3.1.3}Spectrometer adjustment requirements}{5}{}%
+\contentsline {subsection}{\numberline {3.2}Plane reflector, mercury lamp, trigonal prism}{5}{}%
+\contentsline {section}{\numberline {4}Experimental principles}{5}{}%
+\contentsline {subsection}{\numberline {4.1}Principle of goniometry}{5}{}%
+\contentsline {subsection}{\numberline {4.2}Half adjustment method}{6}{}%
+\contentsline {subsection}{\numberline {4.3}Refractive index measurement by the minimum deflection angle method }{6}{}%
+\contentsline {section}{\numberline {5}Contents and Steps}{7}{}%
+\contentsline {subsection}{\numberline {5.1}Adjusting spectrometers}{7}{}%
+\contentsline {subsubsection}{\numberline {5.1.1}Visual coarse adjustment.}{7}{}%
+\contentsline {subsubsection}{\numberline {5.1.2}Requirements and steps for fine tuning}{7}{}%
+\contentsline {subsection}{\numberline {5.2}Measuring minimum deflection angles}{10}{}%
+\contentsline {section}{\numberline {6}Data processing}{10}{}%
+\contentsline {subsection}{\numberline {6.1}Minimum deflection angle data analysis}{11}{}%
+\contentsline {subsubsection}{\numberline {6.1.1}Refractive index numerical analysis}{12}{}%
+\contentsline {section}{\numberline {7}Conclusion and analysis}{12}{}%
+\contentsline {subsection}{\numberline {7.1}Experimental conclusion}{12}{}%
+\contentsline {subsection}{\numberline {7.2}Experimental error analysis}{12}{}%
+\contentsline {section}{\numberline {A}Data Analysis and Visualisation Source Code}{13}{}%
+\contentsline {subsection}{\numberline {A.1}Calculation of data means and standard deviations}{13}{}%
+\contentsline {subsection}{\numberline {A.2}Box line charting and outlier analysis}{13}{}%
+\contentsline {subsection}{\numberline {A.3}Scatter plot production and outlier analysis}{13}{}%

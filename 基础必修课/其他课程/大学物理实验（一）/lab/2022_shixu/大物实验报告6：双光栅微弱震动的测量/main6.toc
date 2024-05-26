@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}Abstract}{2}{}%
+\contentsline {section}{\numberline {2}Purpose of the experiment}{2}{}%
+\contentsline {section}{\numberline {3}Experimental apparatus}{2}{}%
+\contentsline {section}{\numberline {4}Experimental principles}{3}{}%
+\contentsline {subsection}{\numberline {4.1}Doppler shift of a moving optical phase grating}{3}{}%
+\contentsline {subsection}{\numberline {4.2}Light shot acquisition and detection}{4}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}Detection of light shot}{4}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}Detection of weak vibration displacement}{5}{}%
+\contentsline {section}{\numberline {5}Contents and Steps}{6}{}%
+\contentsline {section}{\numberline {6}Data processing}{6}{}%
+\contentsline {section}{\numberline {7}Conclusion and analysis}{8}{}%
+\contentsline {subsection}{\numberline {7.1}Conclusion}{8}{}%
+\contentsline {subsection}{\numberline {7.2}Error analysis}{9}{}%

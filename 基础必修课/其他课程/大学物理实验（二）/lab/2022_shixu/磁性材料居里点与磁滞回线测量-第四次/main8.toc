@@ -1,0 +1,18 @@
+\contentsline {section}{\numberline {1}Abstract}{2}{}%
+\contentsline {section}{\numberline {2}Purpose of the experiment}{2}{}%
+\contentsline {section}{\numberline {3}Experimental apparatus}{2}{}%
+\contentsline {section}{\numberline {4}Experimental principles}{3}{}%
+\contentsline {subsection}{\numberline {4.1}Magnetization of ferromagnetic material}{3}{}%
+\contentsline {subsection}{\numberline {4.2}Hysteresis loop}{4}{}%
+\contentsline {subsection}{\numberline {4.3}The principle of oscilloscope displaying B-H curve}{6}{}%
+\contentsline {subsection}{\numberline {4.4}Curie point and its measurement}{8}{}%
+\contentsline {subsection}{\numberline {4.5}Hysteresis loss and its measurement}{10}{}%
+\contentsline {section}{\numberline {5}Contents and Steps}{10}{}%
+\contentsline {section}{\numberline {6}Data processing}{12}{}%
+\contentsline {subsection}{\numberline {6.1}Mapping of the basic magnetization curve of ferrite}{12}{}%
+\contentsline {subsection}{\numberline {6.2}Plotting the dynamic hysteresis loop}{13}{}%
+\contentsline {subsection}{\numberline {6.3}Measuring the Curie point of the sample}{14}{}%
+\contentsline {section}{\numberline {7}Conclusion and analysis}{15}{}%
+\contentsline {subsection}{\numberline {7.1}Conclusion}{15}{}%
+\contentsline {subsection}{\numberline {7.2}Error analysis}{15}{}%
+\contentsline {section}{\numberline {A}Experimental data recording graph}{16}{}%
