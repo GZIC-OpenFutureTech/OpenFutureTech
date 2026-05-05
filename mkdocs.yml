@@ -1,3 +1,7 @@
 site_name: 华南理工未来技术学院课程攻略
 theme: readthedocs
 repo_url: https://github.com/OpenFuTech/SCUT-FT-Guide
+edit_uri: edit/main/
+
+hooks:
+  - hooks.py
