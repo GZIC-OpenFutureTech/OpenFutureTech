@@ -1,2 +1,5 @@
 docs/
 __pycache__/
+
+# MacOS Directory Structure Files
+.DS_Store
