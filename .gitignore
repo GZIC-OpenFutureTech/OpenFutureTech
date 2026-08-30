@@ -3,3 +3,9 @@ __pycache__/
 
 # MacOS Directory Structure Files
 .DS_Store
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
