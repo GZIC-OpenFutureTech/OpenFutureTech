@@ -2,7 +2,7 @@ import os
 from urllib.parse import quote
 
 # 排除的目录列表，不包括在文件遍历中
-EXCLUDE_DIRS = ['.git', 'docs', '.vscode']
+EXCLUDE_DIRS = ['.git', '.github', 'docs', '.vscode']
 # 需要特别处理的 README.md 文件
 README_MD = ['README.md']
 
