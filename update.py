@@ -8,10 +8,23 @@ README_MD = ['README.md']
 
 # 支持的文本文件扩展名，文本文件会生成文本链接
 TXT_EXTS = ['md', 'txt']
+# 不纳入资源列表的文件扩展名，主要是LaTeX等工具的编译中间产物
+IGNORE_EXTS = ['aux', 'log', 'out', 'toc', 'synctex', 'fls', 'fdb_latexmk', 'bbl', 'blg']
 # GitHub上文本文件的访问URL前缀
 TXT_URL_PREFIX = 'https://github.com/OpenFuTech/SCUT-FT-Guide/blob/main/'
 # GitHub上二进制文件的访问URL前缀
 BIN_URL_PREFIX = 'https://github.com/OpenFuTech/SCUT-FT-Guide/raw/main/'
+
+
+def IsIgnoredFile(filename: str):
+    """
+    判断文件是否为系统垃圾文件或编译中间产物，这类文件不应出现在资源列表中
+    """
+    # 以点开头的隐藏文件，例如macOS的.DS_Store、._xxx，或Windows的desktop.ini等
+    if filename.startswith('.'):
+        return True
+    # 无扩展名的文件不会被误判，因为rsplit会返回文件名本身
+    return filename.rsplit('.', 1)[-1].lower() in IGNORE_EXTS
 
 
 def GenerateFileList(courseGroup: str, course: str):
@@ -25,6 +38,8 @@ def GenerateFileList(courseGroup: str, course: str):
     
     # 遍历课程目录及其子目录
     for root, dirs, files in os.walk(os.path.join(courseGroup, course)):
+        # 跳过隐藏目录，避免其中的内容被收录进资源列表
+        dirs[:] = [d for d in dirs if not d.startswith('.')]
         # 排序文件名
         files.sort()
         # 计算当前目录层级，根目录为1
@@ -37,6 +52,9 @@ def GenerateFileList(courseGroup: str, course: str):
         # 文件的缩进量（比目录多一级）
         subindent = ' ' * 4 * (level - 1)
         for f in files:
+            # 排除系统垃圾文件和编译中间产物
+            if IsIgnoredFile(f):
+                continue
             # 排除README.md文件
             if f not in README_MD:
                 # 如果是md、txt等文本文件，生成GitHub页面链接
