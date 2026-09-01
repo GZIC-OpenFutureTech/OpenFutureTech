@@ -1,0 +1,187 @@
+name: opencode PR Review
+
+on:
+  # 自动审查：仅对来自本仓库分支的 PR 生效。
+  # Fork 的 PR 需由维护者用下面的 /oc 命令触发（opencode 不支持 pull_request_target）
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  # 手动触发：维护者在 PR 中评论 /oc 或 /opencode 即可审查，
+  # 该事件在本仓库上下文中运行，因此对 Fork 的 PR 同样有效
+  issue_comment:
+    types: [created]
+
+concurrency:
+  group: opencode-review-${{ github.event.pull_request.number || github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    # 来自 Fork 的 PR 拿不到密钥，直接跳过（不会留下一个失败的红叉吓到同学），
+    # 这类 PR 由维护者评论 /oc 触发审查。
+    #
+    # 注意 author_association 限制：本仓库是公开仓库，issue_comment 对任何人都会触发，
+    # 若不加限制，任何人都能靠反复评论 /oc 来消耗仓库的 API 额度。
+    # 因此只接受具有写权限者（OWNER / MEMBER / COLLABORATOR）发出的指令。
+    if: >-
+      (github.event_name == 'pull_request' &&
+       github.event.pull_request.head.repo.full_name == github.repository) ||
+      (github.event.issue.pull_request != null &&
+       (contains(github.event.comment.body, '/oc') ||
+        contains(github.event.comment.body, '/opencode')) &&
+       contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'),
+                github.event.comment.author_association))
+    runs-on: ubuntu-latest
+
+    # 权限即是护栏：agent 能做的事情不超过这里授予的范围。
+    # 它可以在 PR 上评论，但无法推送分支、无法改动 main、无法读取其他密钥。
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+
+    steps:
+      - name: Checkout PR content
+        uses: actions/checkout@v6
+        with:
+          # 检出 PR 的实际内容供 agent 阅读。
+          # 本工作流不会执行 PR 中的任何脚本（无 npm install、无 make、无 python）
+          ref: ${{ github.event.pull_request.head.sha || format('refs/pull/{0}/head', github.event.issue.number) }}
+          fetch-depth: 0
+          persist-credentials: false
+          # 本仓库约 1.9GB，其中 74% 是 PDF。
+          # 过滤 blob 并稀疏检出，只拉取评审真正需要的文本文件，
+          # 二进制资料仍可通过 git ls-tree / PR API 看到文件名与体积
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !**/*.pdf
+            !**/*.epub
+            !**/*.zip
+            !**/*.docx
+            !**/*.pptx
+            !**/*.ppt
+            !**/*.pcapng
+            !**/*.jpg
+            !**/*.jpeg
+            !**/*.png
+
+      # 先探一次 provider：密钥缺失、失效、余额不足、模型不存在等情况在这里就拦下，
+      # 避免 opencode 把「APIError: ...」之类的报错发到同学的 PR 上
+      - name: Preflight - 检查 provider 是否可用
+        id: preflight
+        env:
+          GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+        run: |
+          if [ -z "${GLM_API_KEY}" ]; then
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::未配置 GLM_API_KEY，跳过本次审查"
+            exit 0
+          fi
+          CODE=$(curl -sS -o /tmp/probe.json -w '%{http_code}' --max-time 30 \
+            -X POST "https://open.bigmodel.cn/api/paas/v4/chat/completions" \
+            -H "Authorization: Bearer ${GLM_API_KEY}" \
+            -H "Content-Type: application/json" \
+            -d '{"model":"glm-5.3-flash","messages":[{"role":"user","content":"ping"}],"max_tokens":1}' \
+            || echo "000")
+          if [ "${CODE}" = "200" ]; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            # 只记录状态码，不打印响应体，避免泄露密钥相关信息
+            echo "::warning::provider 不可用（HTTP ${CODE}），跳过本次审查"
+          fi
+
+      # 记录审查前最后一条评论的 ID，事后只清理本次新产生的评论
+      - name: 记录评论基线
+        id: baseline
+        if: steps.preflight.outputs.ok == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number || github.event.issue.number }}
+        run: |
+          LAST=$(gh api "repos/${GITHUB_REPOSITORY}/issues/${PR}/comments" --paginate \
+            --jq '[.[].id] | max // 0')
+          echo "last_id=${LAST}" >> "$GITHUB_OUTPUT"
+
+      - name: Run opencode review
+        id: review
+        if: steps.preflight.outputs.ok == 'true'
+        # 审查失败不要让整个 PR 挂上红叉，失败信息保留在 Actions 日志里
+        continue-on-error: true
+        uses: anomalyco/opencode/github@latest
+        env:
+          GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          model: zhipu/glm-5.3-flash
+          use_github_token: true
+          # 不生成 opencode.ai 的分享会话，评论末尾就不会带分享卡片与链接
+          share: false
+          prompt: |
+            你是本仓库（华南理工未来技术学院课程攻略）的 PR 审查助手。请默认用**中文**审查本次 PR。
+
+            ## 第一步：先读规范
+            仓库根目录的 `Contribution.md` 是本仓库的**权威规范**，请先完整阅读它，
+            并以其中的规定作为审查依据。下面列出的只是历史上反复出现的问题，不能取代 `Contribution.md`。
+            你可以自由浏览仓库中的任何文件（例如对比同类课程目录的组织方式），不要只看 diff。
+
+            ## 第二步：重点检查项
+
+            **目录与命名（Contribution.md §2.1）**
+            - 每门课单独一个文件夹，课程根目录下原则上只放 `README.md`
+            - `ebook/`：`书本名称_出版社.pdf`；受版权或体积限制时用同名 `.txt` 说明所需版本
+            - `slide/`、`hw/`、`lab/`、`note/`：需为 `20xx_学生昵称/`（课件为 `20xx_对应教师/`）
+            - `exam/`：需为 `20xx/`，且同一目录内不要混放不同学年的试卷
+            - 作业、习题讲解应放在 `hw/` 而非 `exam/`
+            - 笔记中的图片必须使用**绝对路径**，相对路径在网站上无法显示
+
+            **README 模板（Contribution.md §2.2）**
+            - 必须保留「一、课程内容 / 二、考核方式 / 三、修读攻略 / 四、注意事项」四个二级标题
+            - 不得出现重复标题（例如两个「## 三、修读攻略」会导致站点侧边栏重复）
+            - 署名格式为 `20XX级 昵称：`，新增内容应另起署名段落，
+              **不要把自己的内容并入他人已有的署名列表**，也不要删除他人署名
+            - 保留 `202X级XXX:` 及其下的 `- 待补充` 占位，供后来者续写
+
+            **不应提交的文件**
+            - 系统垃圾文件：`.DS_Store`、`._*`、`Thumbs.db`、`desktop.ini`
+            - 编译中间产物：`.aux`、`.log`、`.out`、`.toc`、`.synctex` 等（`.tex` 源文件与成品 `.pdf` 应保留）
+            - 文件名中的 ` (1)`、`_副本`、`- 副本` 等重复下载痕迹
+            - 单个文件不得超过 100MB（本仓库未启用 LFS，超过会导致提交无效）；
+              超过 50MB 的文件请在评论中指出，提醒维护者注意仓库体积
+
+            **内容一致性**
+            - 同一文件内的成绩占比、考试题型等信息若前后矛盾，务必指出（例如「考勤20%」与「出勤30%」并存）
+            - Markdown 链接必须带协议头，`(video.example.com)` 会被当作相对路径
+            - 站点未启用数学公式插件，`$\LaTeX$` 这类行内公式会原样显示
+
+            ## 第三步：输出要求
+            - **不要自己调用任何工具去发表评论**。直接把审查结果作为你的最终回复输出即可，
+              工作流会自动把它发布成 PR 上的一条评论；你若再自行发一条，PR 上就会出现两条重复评论
+            - 也不要逐行评论
+            - 按「重点建议修改 / 其他建议修改 / 可选」三档分组，每条指出**具体文件路径**，能给出行号更好
+            - 如果没有发现问题，就明确说通过，不要为了凑数而挑刺
+            - 本仓库贡献者多为在校学生、且多用 GitHub 网页端提交，语气请友好、具体、可操作，
+              直接说明「改成什么」而不只是「哪里不对」
+            - 你只负责评审与评论，**不要**修改文件、推送分支或创建提交
+
+      # 兜底：万一 opencode 中途失败并已经把报错发成评论，这里把它删掉，
+      # 只处理基线之后新产生的、由 bot 发出的报错评论，不会误删正常的审查意见
+      - name: 清理失败产生的报错评论
+        if: always() && steps.review.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number || github.event.issue.number }}
+          SINCE: ${{ steps.baseline.outputs.last_id }}
+        run: |
+          gh api "repos/${GITHUB_REPOSITORY}/issues/${PR}/comments" --paginate \
+            --jq ".[] | select(.id > (${SINCE:-0})) \
+                   | select(.user.login == \"github-actions[bot]\") \
+                   | select(.body | test(\"APIError|AI_APICallError|ProviderAuthError|^Error:|Process completed with exit code\"; \"i\")) \
+                   | .id" \
+          | while read -r ID; do
+              [ -n "${ID}" ] || continue
+              gh api -X DELETE "repos/${GITHUB_REPOSITORY}/issues/comments/${ID}" \
+                && echo "已删除报错评论 ${ID}"
+            done
+          echo "::warning::本次审查失败，已静默处理（详见本次运行日志）"
